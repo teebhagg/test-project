@@ -60,10 +60,10 @@ function App() {
           Reset
         </Button>
       </div>
-      <div className="mx-auto max-w-[600px] px-4 sm:px-6 lg:px-8 my-4">
-        <Card className="px-[15px] py-[10px] shadow-lg">
-          <div className="flex justify-between items-center py-[12px]">
-            <p>All Pages</p>
+      <div className="mx-auto max-w-[600px] px-4 sm:px-6 lg:px-8 my-4 text-[14px]">
+        <Card className="px-[15px] py-[10px] shadow-xl rounded-[6px]">
+          <div className="flex justify-between items-center py-[12px] px-[7px]">
+            <p>All pages</p>
             <Checkbox
               id="all-pages"
               checked={allPages}
@@ -71,12 +71,12 @@ function App() {
             />
           </div>
           <Separator className="my-[10px]" />
-          <div className="space-y-2 my-2">
+          <div>
             {pageData.map((component) => (
               <div
                 key={component.id}
-                className="flex justify-between items-center py-[12px]">
-                <p className="">{component.label}</p>
+                className="flex justify-between items-center py-[12px] px-[7px]">
+                <p>{component.label}</p>
                 <Checkbox
                   id={component.id}
                   checked={component.checked}
@@ -89,7 +89,7 @@ function App() {
           <Dialog open={openModel} onOpenChange={setOpenModel}>
             <Button
               onClick={handleSubmit}
-              className="w-full bg-[#FFCE22] hover:bg-[#FFD84D] text-black">
+              className="w-full h-[40px] my-[10px] bg-[#FFCE22] hover:bg-[#FFD84D] text-black font-normal">
               Done
             </Button>
             <DialogContent>
@@ -100,6 +100,7 @@ function App() {
                     {pageData.filter((data) => data.checked).length}
                   </p>
                 </DialogTitle>
+                <Separator className="my-[10px]" />
                 <DialogDescription>
                   <p className="">
                     Pages:{" "}

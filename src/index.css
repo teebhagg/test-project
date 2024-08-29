@@ -67,3 +67,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face{
+  font-family: "Montserrat";
+  src:local("Montserrat-Regular"),
+  url('./assets/fonts/montserrat-font.ttf')
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
